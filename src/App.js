@@ -9,7 +9,7 @@ export class App extends Component {
 				<h1 style={{ textAlign: 'center', marginTop: 15, fontSize: 65 }}>
 					BABY NAME PICKER
 				</h1>
-				<Names names={this.names} />
+				<Names names={names} />
 			</div>
 		);
 	}
