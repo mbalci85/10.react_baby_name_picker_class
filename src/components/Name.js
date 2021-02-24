@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 export class Name extends Component {
 	render() {
-		return <div></div>;
+		return (
+			<div>
+				<button>{this.props.name.name}</button>
+			</div>
+		);
 	}
 }
 

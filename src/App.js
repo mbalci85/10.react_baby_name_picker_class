@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Names from './components/Names';
 import names from './Names';
 
 export class App extends Component {
@@ -8,6 +9,7 @@ export class App extends Component {
 				<h1 style={{ textAlign: 'center', marginTop: 15, fontSize: 65 }}>
 					BABY NAME PICKER
 				</h1>
+				<Names names={this.names} />
 			</div>
 		);
 	}
