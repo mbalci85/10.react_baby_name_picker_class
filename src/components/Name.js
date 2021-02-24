@@ -4,7 +4,16 @@ export class Name extends Component {
 	render() {
 		return (
 			<div style={{ display: 'inline-block' }}>
-				<button style={{ border: 'none' }}>{this.props.name.name}</button>
+				<button
+					style={{
+						border: 'none',
+						padding: 7,
+						margin: 3,
+						borderRadius: 10,
+					}}
+				>
+					{this.props.name.name}
+				</button>
 			</div>
 		);
 	}
