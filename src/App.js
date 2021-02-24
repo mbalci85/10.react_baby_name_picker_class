@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import names from './Names';
 
 export class App extends Component {
 	render() {
