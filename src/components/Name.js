@@ -13,6 +13,10 @@ export class Name extends Component {
 						backgroundColor:
 							this.props.name.sex === 'f' ? 'lightpink' : 'lightblue',
 					}}
+					onClick={this.props.addToFavorites.bind(
+						this,
+						this.props.name.id,
+					)}
 				>
 					{this.props.name.name}
 				</button>

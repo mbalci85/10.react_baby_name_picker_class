@@ -23,7 +23,11 @@ export class Names extends Component {
 				}}
 			>
 				{this.props.names.map((name) => (
-					<Name key={name.id} name={name} />
+					<Name
+						key={name.id}
+						name={name}
+						addToFavorites={this.props.addToFavorites}
+					/>
 				))}
 			</div>
 		);

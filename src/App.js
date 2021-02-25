@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NameFavorite from './components/NameFavorite';
+import NameFavorites from './components/NameFavorites';
 import NameFilter from './components/NameFilter';
 import Names from './components/Names';
 import allNames from './Names';
@@ -9,6 +9,7 @@ export class App extends Component {
 		names: allNames,
 		borderGirl: false,
 		borderBoy: false,
+		favoriteNames: [],
 	};
 	filterAll = () => {
 		this.setState({
@@ -32,14 +33,30 @@ export class App extends Component {
 			borderBoy: false,
 			borderGirl: true,
 		});
-		setTimeout(() => {
-			console.log(this.state);
-		}, 2000);
 	};
 	filterName = (e) => {
 		this.setState({
 			names: allNames.filter((name) =>
 				name.name.toLowerCase().includes(e.target.value.toLowerCase()),
+			),
+		});
+	};
+
+	addToFavorites = (id) => {
+		this.setState({
+			favoriteNames: [...this.state.favoriteNames].concat(
+				this.state.names.filter((name) => name.id === id),
+			),
+			names: this.state.names.filter((name) => name.id !== id),
+		});
+	};
+	removeFromFavorites = (id) => {
+		this.setState({
+			favoriteNames: this.state.favoriteNames.filter(
+				(favoriteName) => favoriteName.id !== id,
+			),
+			names: [...this.state.names].concat(
+				allNames.filter((name) => name.id === id),
 			),
 		});
 	};
@@ -65,11 +82,16 @@ export class App extends Component {
 					filterGirls={this.filterGirls}
 					filterName={this.filterName}
 				/>
-				<NameFavorite />
+				<NameFavorites
+					favoriteNames={this.state.favoriteNames}
+					removeFromFavorites={this.removeFromFavorites}
+				/>
+				<hr style={{ height: '3px' }} />
 				<Names
 					names={this.state.names}
 					borderBoy={this.state.borderBoy}
 					borderGirl={this.state.borderGirl}
+					addToFavorites={this.addToFavorites}
 				/>
 			</div>
 		);
