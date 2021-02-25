@@ -10,6 +10,8 @@ export class Name extends Component {
 						padding: 7,
 						margin: 3,
 						borderRadius: 10,
+						backgroundColor:
+							this.props.name.sex === 'f' ? 'lightpink' : 'lightblue',
 					}}
 				>
 					{this.props.name.name}
