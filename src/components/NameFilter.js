@@ -7,6 +7,7 @@ export class NameFilter extends Component {
 				<input
 					placeholder="Type to filter names...."
 					style={{ width: 400 }}
+					onChange={this.props.filterName}
 				/>
 				<button
 					style={{

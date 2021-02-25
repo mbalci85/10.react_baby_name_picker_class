@@ -24,6 +24,13 @@ export class App extends Component {
 			names: allNames.filter((name) => name.sex === 'f'),
 		});
 	};
+	filterName = (e) => {
+		this.setState({
+			names: allNames.filter((name) =>
+				name.name.toLowerCase().includes(e.target.value.toLowerCase()),
+			),
+		});
+	};
 
 	render() {
 		return (
@@ -44,6 +51,7 @@ export class App extends Component {
 					filterAll={this.filterAll}
 					filterBoys={this.filterBoys}
 					filterGirls={this.filterGirls}
+					filterName={this.filterName}
 				/>
 				<Names names={this.state.names} />
 			</div>
