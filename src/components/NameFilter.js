@@ -15,6 +15,7 @@ export class NameFilter extends Component {
 						padding: 7,
 						borderRadius: 10,
 						margin: 2,
+						backgroundColor: 'lightgray',
 					}}
 					onClick={this.props.filterAll}
 				>

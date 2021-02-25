@@ -77,9 +77,31 @@ export class App extends Component {
 						fontWeight: 'bolder',
 					}}
 				>
-					<span style={{ color: 'lightpink' }}>BABY</span>{' '}
-					<span style={{ color: 'lightblue' }}>NAME</span>{' '}
-					<span style={{ color: 'lightgray' }}>PICKER</span>
+					<span
+						style={{
+							color: this.state.borderBoy ? 'lightblue' : 'lightpink',
+						}}
+					>
+						BABY
+					</span>{' '}
+					<span
+						style={{
+							color: this.state.borderGirl ? 'lightpink' : 'lightblue',
+						}}
+					>
+						NAME
+					</span>{' '}
+					<span
+						style={{
+							color: this.state.borderGirl
+								? 'lightpink'
+								: this.state.borderBoy
+								? 'lightblue'
+								: 'lightgray',
+						}}
+					>
+						PICKER
+					</span>
 				</h1>
 				<NameFilter
 					filterAll={this.filterAll}
