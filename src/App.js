@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NameFavorite from './components/NameFavorite';
 import NameFilter from './components/NameFilter';
 import Names from './components/Names';
 import allNames from './Names';
@@ -64,6 +65,7 @@ export class App extends Component {
 					filterGirls={this.filterGirls}
 					filterName={this.filterName}
 				/>
+				<NameFavorite />
 				<Names
 					names={this.state.names}
 					borderBoy={this.state.borderBoy}
