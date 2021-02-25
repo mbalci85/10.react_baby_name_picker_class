@@ -28,8 +28,17 @@ export class App extends Component {
 	render() {
 		return (
 			<div style={{ marginLeft: 30, marginRight: 30, textAlign: 'center' }}>
-				<h1 style={{ textAlign: 'center', marginTop: 15, fontSize: 65 }}>
-					BABY NAME PICKER
+				<h1
+					style={{
+						textAlign: 'center',
+						marginTop: 15,
+						fontSize: 65,
+						fontWeight: 'bolder',
+					}}
+				>
+					<span style={{ color: 'lightpink' }}>BABY</span>{' '}
+					<span style={{ color: 'lightblue' }}>NAME</span>{' '}
+					<span style={{ color: 'lightgray' }}>PICKER</span>
 				</h1>
 				<NameFilter
 					filterAll={this.filterAll}
