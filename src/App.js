@@ -16,6 +16,7 @@ export class App extends Component {
 			names: allNames,
 			borderGirl: false,
 			borderBoy: false,
+			favoriteNames: [],
 		});
 	};
 
@@ -24,6 +25,7 @@ export class App extends Component {
 			names: allNames.filter((name) => name.sex === 'm'),
 			borderBoy: true,
 			borderGirl: false,
+			favoriteNames: [],
 		});
 	};
 
@@ -32,6 +34,7 @@ export class App extends Component {
 			names: allNames.filter((name) => name.sex === 'f'),
 			borderBoy: false,
 			borderGirl: true,
+			favoriteNames: [],
 		});
 	};
 	filterName = (e) => {
@@ -56,7 +59,9 @@ export class App extends Component {
 				(favoriteName) => favoriteName.id !== id,
 			),
 			names: [...this.state.names].concat(
-				allNames.filter((name) => name.id === id),
+				allNames.filter(
+					(name) => name.id === id && !this.state.names.includes(name),
+				),
 			),
 		});
 	};
