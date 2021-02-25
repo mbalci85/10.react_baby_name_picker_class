@@ -19,6 +19,12 @@ export class App extends Component {
 		});
 	};
 
+	filterGirls = () => {
+		this.setState({
+			names: allNames.filter((name) => name.sex === 'f'),
+		});
+	};
+
 	render() {
 		return (
 			<div style={{ marginLeft: 30, marginRight: 30, textAlign: 'center' }}>
@@ -28,6 +34,7 @@ export class App extends Component {
 				<NameFilter
 					filterAll={this.filterAll}
 					filterBoys={this.filterBoys}
+					filterGirls={this.filterGirls}
 				/>
 				<Names names={this.state.names} />
 			</div>
