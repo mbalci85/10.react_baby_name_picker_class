@@ -27,6 +27,7 @@ export class NameFilter extends Component {
 						margin: 2,
 						backgroundColor: 'lightblue',
 					}}
+					onClick={this.props.filterBoys}
 				>
 					Boys
 				</button>

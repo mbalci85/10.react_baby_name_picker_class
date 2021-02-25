@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import names from '../Names';
 import Name from './Name';
 
 export class Names extends Component {

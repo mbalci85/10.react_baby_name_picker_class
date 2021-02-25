@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import NameFilter from './components/NameFilter';
 import Names from './components/Names';
-import names from './Names';
+import allNames from './Names';
 
 export class App extends Component {
 	state = {
-		names: names,
+		names: allNames,
 	};
 	filterAll = () => {
 		this.setState({
-			names: names,
+			names: allNames,
+		});
+	};
+
+	filterBoys = () => {
+		this.setState({
+			names: allNames.filter((name) => name.sex === 'm'),
 		});
 	};
 
@@ -19,8 +25,11 @@ export class App extends Component {
 				<h1 style={{ textAlign: 'center', marginTop: 15, fontSize: 65 }}>
 					BABY NAME PICKER
 				</h1>
-				<NameFilter filterAll={this.filterAll} />
-				<Names names={names} />
+				<NameFilter
+					filterAll={this.filterAll}
+					filterBoys={this.filterBoys}
+				/>
+				<Names names={this.state.names} />
 			</div>
 		);
 	}
