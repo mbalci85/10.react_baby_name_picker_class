@@ -15,6 +15,7 @@ export class NameFilter extends Component {
 						borderRadius: 10,
 						margin: 2,
 					}}
+					onClick={this.props.filterAll}
 				>
 					All
 				</button>
@@ -24,6 +25,7 @@ export class NameFilter extends Component {
 						padding: 7,
 						borderRadius: 10,
 						margin: 2,
+						backgroundColor: 'lightblue',
 					}}
 				>
 					Boys
@@ -34,6 +36,7 @@ export class NameFilter extends Component {
 						padding: 7,
 						borderRadius: 10,
 						margin: 2,
+						backgroundColor: 'lightpink',
 					}}
 				>
 					Girls
