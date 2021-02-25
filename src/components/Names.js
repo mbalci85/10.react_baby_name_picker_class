@@ -7,14 +7,21 @@ export class Names extends Component {
 			<div
 				style={{
 					padding: 20,
-					borderRight: 'solid 5px lightpink',
-					borderBottom: 'solid 5px lightpink',
-					borderTop: 'solid 5px lightblue',
-					borderLeft: 'solid 5px lightblue',
+					borderRight: this.props.borderBoy
+						? 'solid 5px lightblue'
+						: 'solid 5px lightpink',
+					borderBottom: this.props.borderBoy
+						? 'solid 5px lightblue'
+						: 'solid 5px lightpink',
+					borderTop: this.props.borderGirl
+						? 'solid 5px lightpink'
+						: 'solid 5px lightblue',
+					borderLeft: this.props.borderGirl
+						? 'solid 5px lightpink'
+						: 'solid 5px lightblue',
 					borderRadius: 10,
 				}}
 			>
-				{console.log(this.props.names)}
 				{this.props.names.map((name) => (
 					<Name key={name.id} name={name} />
 				))}
