@@ -3,6 +3,7 @@ import NameFavorites from './components/NameFavorites';
 import NameFilter from './components/NameFilter';
 import Names from './components/Names';
 import allNames from './Names';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 export class App extends Component {
 	state = {
@@ -68,59 +69,65 @@ export class App extends Component {
 
 	render() {
 		return (
-			<div style={{ marginLeft: 30, marginRight: 30, textAlign: 'center' }}>
-				<h1
-					style={{
-						textAlign: 'center',
-						marginTop: 15,
-						fontSize: 65,
-						fontWeight: 'bolder',
-					}}
+			<Router>
+				<div
+					style={{ marginLeft: 30, marginRight: 30, textAlign: 'center' }}
 				>
-					<span
+					<h1
 						style={{
-							color: this.state.borderBoy ? 'lightblue' : 'lightpink',
+							textAlign: 'center',
+							marginTop: 15,
+							fontSize: 65,
+							fontWeight: 'bolder',
 						}}
 					>
-						BABY
-					</span>{' '}
-					<span
-						style={{
-							color: this.state.borderGirl ? 'lightpink' : 'lightblue',
-						}}
-					>
-						NAME
-					</span>{' '}
-					<span
-						style={{
-							color: this.state.borderGirl
-								? 'lightpink'
-								: this.state.borderBoy
-								? 'lightblue'
-								: 'lightgray',
-						}}
-					>
-						PICKER
-					</span>
-				</h1>
-				<NameFilter
-					filterAll={this.filterAll}
-					filterBoys={this.filterBoys}
-					filterGirls={this.filterGirls}
-					filterName={this.filterName}
-				/>
-				<NameFavorites
-					favoriteNames={this.state.favoriteNames}
-					removeFromFavorites={this.removeFromFavorites}
-				/>
-				<hr style={{ height: '3px' }} />
-				<Names
-					names={this.state.names}
-					borderBoy={this.state.borderBoy}
-					borderGirl={this.state.borderGirl}
-					addToFavorites={this.addToFavorites}
-				/>
-			</div>
+						<span
+							style={{
+								color: this.state.borderBoy ? 'lightblue' : 'lightpink',
+							}}
+						>
+							BABY
+						</span>{' '}
+						<span
+							style={{
+								color: this.state.borderGirl
+									? 'lightpink'
+									: 'lightblue',
+							}}
+						>
+							NAME
+						</span>{' '}
+						<span
+							style={{
+								color: this.state.borderGirl
+									? 'lightpink'
+									: this.state.borderBoy
+									? 'lightblue'
+									: 'lightgray',
+							}}
+						>
+							PICKER
+						</span>
+					</h1>
+					<NameFilter
+						filterAll={this.filterAll}
+						filterBoys={this.filterBoys}
+						filterGirls={this.filterGirls}
+						filterName={this.filterName}
+					/>
+					<NameFavorites
+						favoriteNames={this.state.favoriteNames}
+						removeFromFavorites={this.removeFromFavorites}
+					/>
+					<hr style={{ height: '3px' }} />
+					<Names
+						names={this.state.names}
+						borderBoy={this.state.borderBoy}
+						borderGirl={this.state.borderGirl}
+						addToFavorites={this.addToFavorites}
+					/>
+				</div>
+			</Router>
 		);
 	}
 }
