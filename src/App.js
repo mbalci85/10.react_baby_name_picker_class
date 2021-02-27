@@ -87,7 +87,7 @@ export class App extends Component {
 									style={{
 										textAlign: 'center',
 										marginTop: 15,
-										fontSize: 65,
+										fontSize: 55,
 										fontWeight: 'bolder',
 									}}
 								>
@@ -146,13 +146,20 @@ export class App extends Component {
 				<Route path="/about" component={About} />
 				<div
 					style={{
-						display: 'inline-block',
-						marginLeft: 'auto',
-						marginRight: 'auto',
+						display: 'flex',
+						justifyContent: 'center',
+						marginTop: 10,
 					}}
 				>
-					<Link to="/">Home | </Link>
-					<Link to="/about">About</Link>
+					<h4
+						style={{
+							display: 'inline',
+							textAlign: 'center',
+						}}
+					>
+						<Link to="/">Home | </Link>
+						<Link to="/about">About</Link>
+					</h4>
 				</div>
 			</Router>
 		);

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class NameFilter extends Component {
 	render() {
 		return (
-			<div style={{ marginBottom: 30 }}>
+			<div style={{ marginBottom: 20 }}>
 				<input
 					placeholder="Type to filter names...."
 					style={{ width: 450, marginRight: 15, height: 40 }}
