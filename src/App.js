@@ -157,8 +157,12 @@ export class App extends Component {
 							textAlign: 'center',
 						}}
 					>
-						<Link to="/">Home | </Link>
-						<Link to="/about">About</Link>
+						<Link to="/" style={{ textDecoration: 'none' }}>
+							Home |{'  '}
+						</Link>
+						<Link to="/about" style={{ textDecoration: 'none' }}>
+							About
+						</Link>
 					</h4>
 				</div>
 			</Router>
