@@ -121,6 +121,7 @@ export class App extends Component {
 										PICKER
 									</span>
 								</h1>
+
 								<NameFilter
 									filterAll={this.filterAll}
 									filterBoys={this.filterBoys}
@@ -143,6 +144,16 @@ export class App extends Component {
 					)}
 				/>
 				<Route path="/about" component={About} />
+				<div
+					style={{
+						display: 'inline-block',
+						marginLeft: 'auto',
+						marginRight: 'auto',
+					}}
+				>
+					<Link to="/">Home | </Link>
+					<Link to="/about">About</Link>
+				</div>
 			</Router>
 		);
 	}

@@ -5,13 +5,13 @@ export class NameFavorites extends Component {
 	render() {
 		return (
 			<div>
-				<h2 style={{ color: 'lightgray' }}>
+				<h3 style={{ color: 'lightgray' }}>
 					<span>Favorite Names : </span>
-				</h2>
+				</h3>
 				{this.props.favoriteNames.length === 0 ? (
-					<h2 style={{ color: 'lightgray' }}>
+					<h3 style={{ color: 'lightgray' }}>
 						Click the Names to Select Your Favorite Names
-					</h2>
+					</h3>
 				) : (
 					this.props.favoriteNames.map((favoriteName) => (
 						<NameFavorite
